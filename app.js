@@ -335,3 +335,23 @@ case "Height":
             .join("\n"))
         traitChoose = prompt('keep choosing? yes or no: ')
         break;
+
+case "Weight":
+    let traitWeight = promptFor('Enter persons weight: ', chars)
+     people = people.filter(function(el){
+        if (el.weight.toString() == traitWeight)
+            return true;
+
+        })
+        alert(people.map(function (person){
+            return `${person.firstName} ${person.lastName}`;
+            })
+            .join("\n"))
+        traitChoose = prompt('keep choosing? yes or no: ')
+        break;
+        default:
+            traitChoose = prompt('End search')
+            return searchByTraits
+}
+  
+}}
