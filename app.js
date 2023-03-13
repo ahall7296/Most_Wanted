@@ -193,7 +193,7 @@ function findPersonParents(person, people)
       return true;
     });
     if (result.length == 0) {
-      return "No parents in the system";
+      return "There are no parents in the system";
     } else {
     let parents = result.map(function(el){
         return `${el.firstName} ${el.lastName}\n`;
@@ -201,3 +201,16 @@ function findPersonParents(person, people)
      return parentList;
     }
   }
+
+  function findPersonSiblings(person, people){
+    let siblingList = people.filter(function(el){
+        if (person !== el) {
+        if (person.parents.length > 0 && person.parents.toString() === el.parents.toString()) {
+            return true;
+        }
+        else{
+            return false;
+        }}});
+    return siblingList;
+}
+
