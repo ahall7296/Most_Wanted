@@ -266,3 +266,16 @@ function searchByTraits(people){
     let traitChoose = prompt('Search by trait? yes or no: ')
     while(traitChoose = 'yes'){
     let optionsForTraits = prompt('Search by: Gender, DOB, Height, Weight, Eye Color, Occupation: ')
+    switch (optionsForTraits){
+        case "Gender":
+            let traitGender = promptFor('Gender: ', chars)
+            people = people.filter(function (el){
+                if(el.gender == traitGender){
+                    return true;
+            }  
+            })
+            alert(people.map(function (person){
+                return `${person.firstName} ${person.lastName}`;
+                })
+                .join("\n"))
+            traitChoose = prompt('keep choosing? yes or no: ')
