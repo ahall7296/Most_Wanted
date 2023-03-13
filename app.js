@@ -184,3 +184,20 @@ function chars(input) {
 
 //////////////////////////////////////////* End Of Starter Code *//////////////////////////////////////////
 // Any additional functions can be written below this line 👇. Happy Coding! 😁
+
+function findPersonParents(person, people)
+{
+    let parentList = people.filter(function(el){
+    
+      if (el.currentParents === person.id) 
+      return true;
+    });
+    if (result.length == 0) {
+      return "No parents in the system";
+    } else {
+    let parents = result.map(function(el){
+        return `${el.firstName} ${el.lastName}\n`;
+      });
+     return parentList;
+    }
+  }
