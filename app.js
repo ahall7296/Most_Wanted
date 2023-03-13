@@ -262,4 +262,7 @@ function displayPersonDescendants(person, people){
     });
     return descendantsMap;      
 }
-
+function searchByTraits(people){
+    let traitChoose = prompt('Search by trait? yes or no: ')
+    while(traitChoose = 'yes'){
+    let optionsForTraits = prompt('Search by: Gender, DOB, Height, Weight, Eye Color, Occupation: ')
