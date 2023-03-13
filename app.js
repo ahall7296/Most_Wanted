@@ -215,7 +215,6 @@ function findPersonSiblings(person, people){
 }
 
 function findPersonSpouse(person, people)
-
     let spouseList = people.filter(function(el){
         if (el.currentSpouse === person.id) {
         return true;
@@ -228,3 +227,19 @@ function findPersonSpouse(person, people)
     });
     return spouseList;
 }})
+
+function displayFamiily(person, people){
+    let spouse = findPersonSpouse(person, people);
+    let parents = findPersonParents(person, people);
+    let siblings = findPersonSiblings(person,people);
+    let spouseMap = spouse.map(function(el){
+        return `${person.firstName}'s spouse is ${el.firstName} ${el.lastName}.\n`;
+    });
+    let parentsMap = parents.map(function(el){
+        return `One of their parents is ${el.firstName} ${el.lastName}.\n`;
+    });
+    let siblingsMap = siblings.map(function(el){
+        return `One of their siblings is ${el.firstName} ${el.lastName}.\n`;
+    });
+    return spouseMap + parentsMap + siblingsMap;
+}
