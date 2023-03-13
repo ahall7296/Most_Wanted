@@ -202,7 +202,7 @@ function findPersonParents(person, people)
     }
   }
 
-  function findPersonSiblings(person, people){
+function findPersonSiblings(person, people){
     let siblingList = people.filter(function(el){
         if (person !== el) {
         if (person.parents.length > 0 && person.parents.toString() === el.parents.toString()) {
@@ -214,3 +214,17 @@ function findPersonParents(person, people)
     return siblingList;
 }
 
+function findPersonSpouse(person, people)
+
+    let spouseList = people.filter(function(el){
+        if (el.currentSpouse === person.id) {
+        return true;
+        }
+        if (result.length == 0) {
+        return "No spouse in the system";
+          } else {
+    let spouse = result.map(function(el){
+         return `${el.firstName} ${el.lastName}\n`;
+    });
+    return spouseList;
+}})
