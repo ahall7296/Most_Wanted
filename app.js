@@ -254,3 +254,11 @@ function findPersonDescendants(person, people){
         }});
     return descendantList;
 }
+
+function displayPersonDescendants(person, people){
+    let descendants = findPersonDescendants(person,people);
+    let descendantsMap = descendants.map(function(el){
+        return `One of their descendants is ${el.firstName} ${el.lastName}.\n`;
+    });
+    return descendantsMap;      
+}
