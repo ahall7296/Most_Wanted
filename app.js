@@ -214,13 +214,13 @@ function findPersonSiblings(person, people){
     return siblingList;
 }
 
-function findPersonSpouse(person, people)
+function findPersonSpouse(person, people){
     let spouseList = people.filter(function(el){
         if (el.currentSpouse === person.id) {
         return true;
         }
         if (result.length == 0) {
-        return "No spouse in the system";
+        return "There is no spouse in the system";
           } else {
     let spouse = result.map(function(el){
          return `${el.firstName} ${el.lastName}\n`;
@@ -262,3 +262,4 @@ function displayPersonDescendants(person, people){
     });
     return descendantsMap;      
 }
+
