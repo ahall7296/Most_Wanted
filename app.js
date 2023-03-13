@@ -243,3 +243,14 @@ function displayFamiily(person, people){
     });
     return spouseMap + parentsMap + siblingsMap;
 }
+
+function findPersonDescendants(person, people){
+    let descendantList = people.filter(function(el){
+        if (el.parents.includes(person.id)) {
+            return true;
+        }
+        else{
+            return false;
+        }});
+    return descendantList;
+}
